@@ -1,5 +1,5 @@
-# SISTEMA DE ANáLISIS POLíTICO
-## RECUPERACIóN DE LA INFORMACIóN: PROYECTO FINAL
+# SISTEMA DE ANÁLISIS POLÍTICO
+## RECUPERACIÓN DE LA INFORMACIÓN: PROYECTO FINAL
 
  Las técnicas automatizadas de análisis de textos han asumido un papel cada vez más importante en el estudio de los partidos y el discurso político. Los investigadores han estudiado manifiestos, discursos en el parlamento y debates en reuniones nacionales de partidos. Estos métodos han demostrado ser muy prometedores para medir las características latentes de los textos. Sin embargo, en su aplicación, los modelos de escala requieren una gran cantidad de decisiones por parte del investigador que probablemente tengan implicaciones sustanciales para el análisis. María Ramos se dedica al análisis de textos políticos y los ha contratado para realizar un análisis de textos políticos. Piensa que un punto de partida podrían ser los informes presidenciales desde Carlos de Salinas hasta la fecha. Los informes pueden ser localizados en la red. Sin embargo, el sistema no debe restringirse a estos y debe poder utilizarse con cualquier texto político.
  
