@@ -1,32 +1,28 @@
-# SISTEMA DE ANÁLISIS POLÍTICO
-## RECUPERACIÓN DE LA INFORMACIÓN: PROYECTO FINAL
+# POLITICAL ANALYSIS SYSTEM
+## INFORMATION RETRIEVAL: FINAL PROJECT
 
- Las técnicas automatizadas de análisis de textos han asumido un papel cada vez más importante en el estudio de los partidos y el discurso político. Los investigadores han estudiado manifiestos, discursos en el parlamento y debates en reuniones nacionales de partidos. Estos métodos han demostrado ser muy prometedores para medir las características latentes de los textos. Sin embargo, en su aplicación, los modelos de escala requieren una gran cantidad de decisiones por parte del investigador que probablemente tengan implicaciones sustanciales para el análisis. María Ramos se dedica al análisis de textos políticos y los ha contratado para realizar un análisis de textos políticos. Piensa que un punto de partida podrían ser los informes presidenciales desde Carlos de Salinas hasta la fecha. Los informes pueden ser localizados en la red. Sin embargo, el sistema no debe restringirse a estos y debe poder utilizarse con cualquier texto político.
- 
-Está interesada en realizar gráficas y conocer por ejemplo que temas abordaron más cada uno de los presidentes (autores) bajo estudio. Si hablaron de mejorar el salario, de ganancia petroleras, de salud, etc.
+Automated text analysis techniques have taken on an increasingly important role in the study of political parties and political discourse. Researchers have studied manifestos, parliamentary speeches, and debates at national party meetings. These methods have proven very promising for measuring latent characteristics of texts. However, in their application, scaling models require many decisions by the researcher that likely have substantial implications for the analysis. María Ramos is dedicated to the analysis of political texts and has hired you to perform an analysis of political texts. She thinks a starting point could be the presidential reports from Carlos de Salinas to the present. These reports can be found online. However, the system should not be restricted to these and must be usable with any political text.
 
-También está interesada en identificar semejanzas y diferencias entre los representantes de diferentes partidos. 
-María ha pensado en las siguientes funciones para su sistema:
+She is interested in creating graphs and knowing, for example, which topics each of the presidents (authors) under study addressed the most. Whether they talked about improving wages, oil profits, health, etc.
 
-### Estadísticas Generales
-Aquí se presentarían datos generales de los documentos tales como longitud de cada documento (número de palabras). Número de palabras diferentes de los textos. Número de documentos analizados por político y otras que se juzgue de utilidad.
+She is also interested in identifying similarities and differences between representatives of different parties. María has considered the following functions for her system:
 
-### Gráfica de dispersión léxica
+### General Statistics
+Here, general data of the documents such as the length of each document (number of words), the number of different words in the texts, the number of documents analyzed by politician, and other useful statistics will be presented.
 
-La importancia de una palabra/token puede estimarse por su dispersión en el corpus. Los tokens varían en su distribución a lo largo del texto, lo que indica cuándo o dónde se utilizan ciertos tokens en el texto. La dispersión léxica es una medida de la homogeneidad de la palabra en todo el corpus. Se pueden generar distribuciones de palabras para tener una idea general de los temas, su distribución y sus cambios. Un gráfico de dispersión léxica representa las apariciones de la palabra y la frecuencia con la que aparecen desde el comienzo del corpus. Por tanto, los diagramas de dispersión léxica son útiles para identificar patrones.
+### Lexical Dispersion Plot
+The importance of a word/token can be estimated by its dispersion in the corpus. Tokens vary in their distribution throughout the text, indicating when or where certain tokens are used in the text. Lexical dispersion is a measure of the homogeneity of the word throughout the corpus. Word distributions can be generated to get a general idea of the topics, their distribution, and their changes. A lexical dispersion plot represents the occurrences of the word and the frequency with which they appear from the beginning of the corpus. Therefore, lexical dispersion diagrams are useful for identifying patterns.
 
-El eje x del gráfico de dispersión léxica muestra el desplazamiento de palabras, es decir, la aparición y frecuencia de las palabras a lo largo de los discursos y el eje y muestra los problemas específicos.
+The x-axis of the lexical dispersion plot shows the word offset, i.e., the appearance and frequency of words throughout the speeches, and the y-axis shows the specific issues.
 
-### Modelos de serie tiempo
-En el análisis predictivo, el tiempo es un factor muy importante que debe tenerse en cuenta. El patrón reconocido o predicho debe estudiarse y verificarse con respecto al tiempo. Los datos de series de tiempo no son más que una serie de datos ordenados en el tiempo. La figura 5 captura la tendencia comparativa de las series temporales entre los temas “paz” y “terrorismo” como ejemplo.
+### Time Series Models
+In predictive analysis, time is a very important factor to consider. The recognized or predicted pattern must be studied and verified concerning time. Time series data is simply a series of data ordered over time. Figure 5 captures the comparative trend of the time series between the topics “peace” and “terrorism” as an example.
 
-### Representación en WordCloud de los discursos
-Para obtener una impresión rápida y holística de las transcripciones de discursos que se están considerando, se crean nubes de palabras. Las nubes de palabras son una técnica de visualización sencilla e intuitiva que se utiliza a menudo para proporcionar una primera impresión de documentos de texto. WordClouds muestra las palabras más frecuentes del texto como una lista ponderada de palabras en un dise?o espacial específico, por ejemplo, dise?o secuencial, circular o aleatorio. Los tama?os de fuente de las palabras cambian según su relevancia y frecuencia de aparición, y otras propiedades visuales como el color, la posición y la orientación a menudo varían por razones estéticas o para codificar visualmente información adicional.
+### WordCloud Representation of Speeches
+To get a quick and holistic impression of the speech transcripts under consideration, word clouds are created. Word clouds are a simple and intuitive visualization technique often used to provide a first impression of text documents. WordClouds display the most frequent words in the text as a weighted list of words in a specific spatial layout, for example, sequential, circular, or random layout. The font sizes of the words change according to their relevance and frequency of appearance, and other visual properties such as color, position, and orientation often vary for aesthetic reasons or to visually encode additional information.
 
-### Examinar tendencias/patrones utilizando diagramas de barras
-Los gráficos de barras representan cómo se distribuyen los datos entre ciertos valores potenciales. Aunque es un gráfico de apariencia simple, un gráfico de barras tiene la capacidad de capturar la esencia de los datos al juzgar la dispersión y responder ciertas preguntas. La figura que se muestra a continuación es una representación del "Nombre del tema frente al número de menciones". Para cada nombre de token proporcionado, se calcula la frecuencia de aparición y se genera el gráfico.
+### Examine Trends/Patterns Using Bar Charts
+Bar charts represent how data is distributed among certain potential values. Although a simple-looking chart, a bar chart has the ability to capture the essence of the data by judging dispersion and answering certain questions. The figure below is a representation of "Topic name versus number of mentions." For each provided token name, the frequency of occurrence is calculated and the chart is generated.
 
-### Clasificador
-María desea caracterizar escritos de la política mexicana como Neoliberales y perteneciente al Humanismo México. Así que también desea que el sistema sea capaza de diferenciarlos. María ha solicita una propuesta de lo que su sistema podría proporcionarle de acuerdo con las funciones que describe. También espera, de ser posible, que le proporciones funciones adicionales que puedan serle de utilidad, por ejemplo, la detección de conceptos. Está abierta a cualquier propuesta.
-
-
+### Classifier
+María wants to characterize writings of Mexican politics as Neoliberal and belonging to Mexican Humanism. Therefore, she also wants the system to be able to differentiate them. María requests a proposal on what her system could provide according to the functions she describes. She also hopes, if possible, that you can provide additional functions that may be useful to her, for example, concept detection. She is open to any proposal.
