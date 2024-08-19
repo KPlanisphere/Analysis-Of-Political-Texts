@@ -1,28 +1,118 @@
-# POLITICAL ANALYSIS SYSTEM
-## INFORMATION RETRIEVAL: FINAL PROJECT
+# ANALYSIS OF POLITICAL TEXTS
 
-Automated text analysis techniques have taken on an increasingly important role in the study of political parties and political discourse. Researchers have studied manifestos, parliamentary speeches, and debates at national party meetings. These methods have proven very promising for measuring latent characteristics of texts. However, in their application, scaling models require many decisions by the researcher that likely have substantial implications for the analysis. María Ramos is dedicated to the analysis of political texts and has hired you to perform an analysis of political texts. She thinks a starting point could be the presidential reports from Carlos de Salinas to the present. These reports can be found online. However, the system should not be restricted to these and must be usable with any political text.
 
-She is interested in creating graphs and knowing, for example, which topics each of the presidents (authors) under study addressed the most. Whether they talked about improving wages, oil profits, health, etc.
+This project implements a text classification model to differentiate between texts related to **humanism** and **neoliberalism**. The model is trained using a set of pre-processed text files and outputs predictions on unseen data.
 
-She is also interested in identifying similarities and differences between representatives of different parties. María has considered the following functions for her system:
+The project utilizes **deep learning techniques** for text classification and is designed for research in the area of **information retrieval** and **document classification**. This project includes all the necessary files for vocabulary extraction, model training, testing, and analysis.
 
-### General Statistics
-Here, general data of the documents such as the length of each document (number of words), the number of different words in the texts, the number of documents analyzed by politician, and other useful statistics will be presented.
+<p align= "center">
+    <img src="https://github.com/user-attachments/assets/b2764f60-4257-4b26-9748-4c9ba500c8d7" style="width: 50%; height: auto;">
+</p>
 
-### Lexical Dispersion Plot
-The importance of a word/token can be estimated by its dispersion in the corpus. Tokens vary in their distribution throughout the text, indicating when or where certain tokens are used in the text. Lexical dispersion is a measure of the homogeneity of the word throughout the corpus. Word distributions can be generated to get a general idea of the topics, their distribution, and their changes. A lexical dispersion plot represents the occurrences of the word and the frequency with which they appear from the beginning of the corpus. Therefore, lexical dispersion diagrams are useful for identifying patterns.
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Directory Structure](#directory-structure)
+3. [Model Training and Testing](#model-training-and-testing)
+4. [File Descriptions](#file-descriptions)
+5. [How to Run](#how-to-run)
+6. [Requirements](#requirements)
 
-The x-axis of the lexical dispersion plot shows the word offset, i.e., the appearance and frequency of words throughout the speeches, and the y-axis shows the specific issues.
+## Project Overview
 
-### Time Series Models
-In predictive analysis, time is a very important factor to consider. The recognized or predicted pattern must be studied and verified concerning time. Time series data is simply a series of data ordered over time. Figure 5 captures the comparative trend of the time series between the topics “peace” and “terrorism” as an example.
+The project involves the creation of a machine learning model that can classify documents based on whether they are related to **humanism** or **neoliberalism**. The dataset consists of text files from these two categories, which are processed to build vocabularies and train the model.
 
-### WordCloud Representation of Speeches
-To get a quick and holistic impression of the speech transcripts under consideration, word clouds are created. Word clouds are a simple and intuitive visualization technique often used to provide a first impression of text documents. WordClouds display the most frequent words in the text as a weighted list of words in a specific spatial layout, for example, sequential, circular, or random layout. The font sizes of the words change according to their relevance and frequency of appearance, and other visual properties such as color, position, and orientation often vary for aesthetic reasons or to visually encode additional information.
+The final model is saved and can be used for testing new documents. It is based on deep learning architectures and is designed to handle text preprocessing, tokenization, and text classification tasks.
 
-### Examine Trends/Patterns Using Bar Charts
-Bar charts represent how data is distributed among certain potential values. Although a simple-looking chart, a bar chart has the ability to capture the essence of the data by judging dispersion and answering certain questions. The figure below is a representation of "Topic name versus number of mentions." For each provided token name, the frequency of occurrence is calculated and the chart is generated.
+## Directory Structure
 
-### Classifier
-María wants to characterize writings of Mexican politics as Neoliberal and belonging to Mexican Humanism. Therefore, she also wants the system to be able to differentiate them. María requests a proposal on what her system could provide according to the functions she describes. She also hopes, if possible, that you can provide additional functions that may be useful to her, for example, concept detection. She is open to any proposal.
+The project is organized as follows:
+
+```plaintext
+/fold
+    /fold/humanismo          # Contains training files related to humanism (.txt files)
+    /fold/neoliberalismo      # Contains training files related to neoliberalism (.txt files)
+/modelos                     # Directory where the trained models are saved
+/pruebas                     # Contains new text files for testing the trained model
+corpus.txt                   # List of all unique words in both "humanism" and "neoliberalism" texts
+vocabulario_humanismo.txt    # List of unique words from humanism text files
+vocabulario_neoliberalismo.txt# List of unique words from neoliberalism text files
+PFRY.py                      # Main Python file for training the model and handling classification
+```
+
+## Model Training and Testing
+
+### Vocabulary Extraction
+
+The first step in the process is extracting vocabularies from the text files in the `humanismo` and `neoliberalismo` folders. The extracted vocabularies are saved into their respective files (`vocabulario_humanismo.txt`, `vocabulario_neoliberalismo.txt`, and `corpus.txt`).
+
+### Model Training
+
+The model is trained using text data from both categories. The main script (`PFRY.py`) handles text preprocessing, tokenization, and the training process. The trained model is saved in the `/modelos` directory.
+
+### Model Testing
+
+Once trained, the model can classify new documents. Place test files in the `/pruebas` directory, and the model will predict whether each document is related to **humanism** or **neoliberalism**.
+
+## File Descriptions
+
+-   **/fold/humanismo/**: Contains all text files for humanism-related training.
+-   **/fold/neoliberalismo/**: Contains all text files for neoliberalism-related training.
+-   **/modelos/**: This directory contains the trained model and auxiliary files (e.g., tokenizer and label encoder).
+    -   Example model files:
+        -   `08710_12epochs_label_encoder.pickle`: Stores label encoder for model interpretation.
+        -   `08710_12epochs_modelo.h5`: The trained Keras model file.
+        -   `08710_12epochs_tokenizer.pickle`: Tokenizer used for preprocessing the text data.
+-   **/pruebas/**: Place new text files here to be classified by the model.
+-   **corpus.txt**: Contains all unique words across both categories (humanism and neoliberalism).
+-   **vocabulario_humanismo.txt**: Contains all unique words from humanism training files.
+-   **vocabulario_neoliberalismo.txt**: Contains all unique words from neoliberalism training files.
+-   **PFRY.py**: The main script responsible for training the model and performing text classification. It contains:
+    -   Text loading and preprocessing functions.
+    -   Model training and saving logic.
+    -   Testing functionality for classifying new documents.
+
+## How to Run
+### Prerequisites
+
+Ensure you have Python 3.x installed with the following libraries:
+
+```bash
+pip install tensorflow keras numpy scikit-learn
+```
+### Training the Model
+
+1.  Place your training data in the `/fold/humanismo` and `/fold/neoliberalismo` directories.
+2.  Run the main Python file to train the model:
+
+```bash
+python PFRY.py
+``` 
+
+This will generate the trained model and save it in the `/modelos` directory.
+
+### Testing the Model
+
+1.  Place new text files in the `/pruebas` directory.
+2.  Run the following command to classify the new files:
+
+```bash
+python PFRY.py --test
+```
+
+The script will output predictions for each file in the `/pruebas` directory, indicating whether it is classified as **humanism** or **neoliberalism**.
+
+## Requirements
+
+-   Python 3.x
+-   TensorFlow
+-   Keras
+-   Scikit-learn
+-   NumPy
+
+### Installing Required Libraries
+
+Run the following command to install all necessary Python libraries:
+
+```bash
+pip install -r requirements.txt
+```
